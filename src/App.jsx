@@ -1,12 +1,11 @@
-
+import Navbar from "./components/Navbar";
 
 function App() {
-
   return (
     <>
-      <h1 className="text-2xl text-white xs:bg-yellow" >Hello World</h1>
+      <Navbar />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
