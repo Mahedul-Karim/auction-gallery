@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "../util/Container";
 import TableRow from "./TableRow";
 import Sidebar from "./Sidebar";
+import { toast } from "react-toastify";
 
 const Auction = () => {
   const [auctionItems, setAuctionItems] = useState([]);
@@ -26,6 +27,18 @@ const Auction = () => {
     existingFavouriteItems.push(item);
 
     setFavouriteItems(existingFavouriteItems);
+
+    toast("🦄 An item is added to favorites.!");
+  };
+
+  const removeFvourites = (id) => {
+    const existingFavouriteItems = [...favouriteItems];
+
+    const newItems = existingFavouriteItems.filter((item) => item.id !== id);
+
+    setFavouriteItems(newItems);
+
+    toast.warn("An item was removed from favorites.!");
   };
 
   return (
@@ -66,7 +79,10 @@ const Auction = () => {
             </div>
           </div>
           <div className="bg-white rounded-3xl h-max">
-            <Sidebar favouriteItems={favouriteItems} />
+            <Sidebar
+              favouriteItems={favouriteItems}
+              onRemove={removeFvourites}
+            />
           </div>
         </div>
       </Container>

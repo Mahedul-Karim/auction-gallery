@@ -1,6 +1,6 @@
 import React from "react";
 
-const Sidebar = ({ favouriteItems = [] }) => {
+const Sidebar = ({ favouriteItems = [], onRemove }) => {
   const totalPrice =
     favouriteItems.length === 0
       ? 0
@@ -56,7 +56,7 @@ const Sidebar = ({ favouriteItems = [] }) => {
                   </div>
                 </div>
                 <div>
-                  <button>
+                  <button onClick={() => onRemove(item.id)} className="cursor-pointer" >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
