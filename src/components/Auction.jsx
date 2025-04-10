@@ -5,7 +5,10 @@ import Sidebar from "./Sidebar";
 
 const Auction = () => {
   const [auctionItems, setAuctionItems] = useState([]);
-  const [favouriteItems,setFavouriteItems] = useState([]);
+  const [favouriteItems, setFavouriteItems] = useState([]);
+
+  const favouritemItemIds =
+    favouriteItems.length === 0 ? [] : favouriteItems.map((item) => item.id);
 
   useEffect(() => {
     (async function () {
@@ -16,7 +19,14 @@ const Auction = () => {
     })();
   }, []);
 
-  // const addToFvourites=(id)
+  const addToFvourites = (id) => {
+    const item = auctionItems.find((item) => item.id === id);
+
+    const existingFavouriteItems = [...favouriteItems];
+    existingFavouriteItems.push(item);
+
+    setFavouriteItems(existingFavouriteItems);
+  };
 
   return (
     <section className="py-16 bg-background">
@@ -47,6 +57,8 @@ const Auction = () => {
                         price={auc.currentBidPrice}
                         timeLeft={auc.timeLeft}
                         id={auc.id}
+                        onAdd={addToFvourites}
+                        isFavourite={favouritemItemIds.includes(auc.id)}
                       />
                     ))}
                 </tbody>

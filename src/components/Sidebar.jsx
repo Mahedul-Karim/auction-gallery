@@ -35,7 +35,7 @@ const Sidebar = ({ favouriteItems = [] }) => {
             </p>
           </div>
         ) : (
-          <div className="px-3">
+          <div className="px-3 space-y-4">
             {favouriteItems.map((item) => (
               <div
                 className="flex justify-between border-b border-solid pb-3 border-gray-200"

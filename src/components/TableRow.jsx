@@ -1,6 +1,14 @@
 import React from "react";
 
-const TableRow = ({ image, title, price, timeLeft, id }) => {
+const TableRow = ({
+  image,
+  title,
+  price,
+  timeLeft,
+  id,
+  onAdd,
+  isFavourite,
+}) => {
   return (
     <tr>
       <td>
@@ -22,13 +30,21 @@ const TableRow = ({ image, title, price, timeLeft, id }) => {
         <p className="font-medium text-blue-dark">{timeLeft}</p>
       </td>
       <th>
-        <button className="cursor-pointer disabled:cursor-not-allowed">
+        <button
+          className="cursor-pointer disabled:cursor-not-allowed"
+          onClick={() => onAdd(id)}
+          disabled={isFavourite}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            className={`size-5 stroke-blue-dark`}
+            className={`size-5  ${
+              isFavourite
+                ? "stroke-red-600 fill-red-600"
+                : "stroke-blue-dark fill-none"
+            }`}
           >
             <path
               strokeLinecap="round"
