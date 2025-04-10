@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../util/Container";
 import TableRow from "./TableRow";
 import Sidebar from "./Sidebar";
 
 const Auction = () => {
+  const [auctionItems, setAuctionItems] = useState([]);
+  const [favouriteItems,setFavouriteItems] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      const res = await fetch("/data.json");
+      const data = await res.json();
+
+      setAuctionItems(data);
+    })();
+  }, []);
+
+  // const addToFvourites=(id)
+
   return (
     <section className="py-16 bg-background">
       <Container>
@@ -12,7 +26,7 @@ const Auction = () => {
           Discover and bid on extraordinary items
         </p>
         <div className="grid lg:grid-cols-[1fr_0.4fr] gap-4">
-          <div className="bg-white rounded-3xl">
+          <div className="bg-white rounded-3xl overflow-auto">
             <div className="overflow-x-auto">
               <table className="table">
                 <thead className="p-16">
@@ -24,15 +38,23 @@ const Auction = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <TableRow />
-                  <TableRow />
-                  <TableRow />
+                  {auctionItems.length > 0 &&
+                    auctionItems.map((auc) => (
+                      <TableRow
+                        key={auc.id}
+                        image={auc.image}
+                        title={auc.title}
+                        price={auc.currentBidPrice}
+                        timeLeft={auc.timeLeft}
+                        id={auc.id}
+                      />
+                    ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <div className="bg-white rounded-3xl">
-            <Sidebar />
+          <div className="bg-white rounded-3xl h-max">
+            <Sidebar favouriteItems={favouriteItems} />
           </div>
         </div>
       </Container>

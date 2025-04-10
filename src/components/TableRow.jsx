@@ -1,31 +1,28 @@
 import React from "react";
 
-const TableRow = () => {
+const TableRow = ({ image, title, price, timeLeft, id }) => {
   return (
     <tr>
       <td>
         <div className="flex items-center gap-3">
           <div className="avatar">
             <div className="mask mask-squircle h-12 w-12">
-              <img
-                src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                alt="Avatar Tailwind CSS Component"
-              />
+              <img src={image} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
           <div>
-            <div className="text-blue-dark">Vintage Leica M3 Camera</div>
+            <div className="text-blue-dark">{title}</div>
           </div>
         </div>
       </td>
       <td>
-        <p className="font-medium text-blue-dark">$2,890</p>
+        <p className="font-medium text-blue-dark">${price}</p>
       </td>
       <td>
-        <p className="font-medium text-blue-dark">2 days left</p>
+        <p className="font-medium text-blue-dark">{timeLeft}</p>
       </td>
       <th>
-        <button className="cursor-pointer disabled:cursor-not-allowed" >
+        <button className="cursor-pointer disabled:cursor-not-allowed">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

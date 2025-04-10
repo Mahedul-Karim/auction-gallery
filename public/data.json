@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "Canon EOS Rebel T7 DSLR Camera",
+    "description": "Capture stunning photos and videos with this easy-to-use DSLR camera, perfect for beginners and enthusiasts.",
+    "currentBidPrice": 320.5,
+    "timeLeft": "2 days left",
+    "bidsCount": 14,
+    "image": "/assets/Bid1-min.png"
+  },
+  {
+    "id": "2",
+    "title": "Fender Acoustic Guitar",
+    "description": "A high-quality acoustic guitar with rich tones, ideal for both beginners and professionals.",
+    "currentBidPrice": 150.0,
+    "timeLeft": "1 day left",
+    "bidsCount": 23,
+    "image": "/assets/Bid2-min.png"
+  },
+  {
+    "id": "3",
+    "title": "Apple MacBook Pro 14-inch",
+    "description": "Powerful performance and stunning display packed into a sleek design for creative professionals.",
+    "currentBidPrice": 1250.0,
+    "timeLeft": "5 hours left",
+    "bidsCount": 37,
+    "image": "/assets/Bid3-min.png"
+  },
+  {
+    "id": "4",
+    "title": "Rolex Submariner Watch",
+    "description": "An iconic luxury timepiece that combines style with precision engineering.",
+    "currentBidPrice": 8500.0,
+    "timeLeft": "3 days left",
+    "bidsCount": 9,
+    "image": "/assets/Bid4-min.png"
+  },
+  {
+    "id": "5",
+    "title": "Ergonomic Office Chair",
+    "description": "Comfortable and adjustable office chair designed for long working hours.",
+    "currentBidPrice": 90.0,
+    "timeLeft": "7 hours left",
+    "bidsCount": 17,
+    "image": "/assets/Bid5-min.png"
+  },
+  {
+    "id": "6",
+    "title": "The Great Gatsby by F. Scott Fitzgerald",
+    "description": "A classic novel exploring themes of wealth, society, and the American Dream.",
+    "currentBidPrice": 12.99,
+    "timeLeft": "4 hours left",
+    "bidsCount": 5,
+    "image": "/assets/Bid6-min.png"
+  },
+  {
+    "id": "7",
+    "title": "Vintage Ceramic Flower Vase",
+    "description": "Elegant handcrafted vase perfect for adding charm to any room.",
+    "currentBidPrice": 30.25,
+    "timeLeft": "6 days left",
+    "bidsCount": 8,
+    "image": "/assets/Bid7-min.png"
+  }
+]
