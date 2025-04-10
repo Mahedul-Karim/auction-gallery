@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../util/Container";
 import TableRow from "./TableRow";
+import Sidebar from "./Sidebar";
 
 const Auction = () => {
   return (
@@ -10,7 +11,7 @@ const Auction = () => {
         <p className="text-black/[0.8] my-3">
           Discover and bid on extraordinary items
         </p>
-        <div className="grid grid-cols-[1fr_0.4fr] gap-4">
+        <div className="grid lg:grid-cols-[1fr_0.4fr] gap-4">
           <div className="bg-white rounded-3xl">
             <div className="overflow-x-auto">
               <table className="table">
@@ -30,7 +31,9 @@ const Auction = () => {
               </table>
             </div>
           </div>
-          <div className="bg-white rounded-3xl"></div>
+          <div className="bg-white rounded-3xl">
+            <Sidebar />
+          </div>
         </div>
       </Container>
     </section>
