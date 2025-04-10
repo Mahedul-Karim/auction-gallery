@@ -50,7 +50,7 @@ const Sidebar = ({ favouriteItems = [], onRemove }) => {
                   <div className="text-sm text-blue-dark">
                     <p className="line-clamp-2">{item.title}</p>
                     <div className="flex items-center gap-4 mt-1">
-                      <p>${item.price}</p>
+                      <p>${item.currentBidPrice}</p>
                       <p>Bids: {item.bidsCount}</p>
                     </div>
                   </div>
